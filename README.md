@@ -76,7 +76,8 @@ We also experimented with a second neural network to see how different configura
 | Neurons	| 64, 36, 16 |	32, 16 |
 | Optimizer	| Adam | SGD |
 | Epochs	| 10	| 5 |
-| Output | Sigmoid | Sigmoid |  
+| Output | Sigmoid | Sigmoid |     
+
 The experimental version is smaller and uses SGD instead of Adam. It is meant to allow us to investigate whether changing the network architecture and optimization method would affect its learning performance.   
 
 ## Stage 5: Evaluation
@@ -85,10 +86,10 @@ Model accuracy comparison
 •	Baseline ANN: 86.20 %  
 •	Experimental ANN: 66.01%   
 RF performed slightly better than the baseline ANN in overall accuracy. However, accuracy isn’t the only metric we’re looking at.   
-Precision, recall, and F1-score  
-Precision:  When the IDS identifies something as an attack, how often is it actually an attack?   
-Recall: Out of all the actual attacks, how many did the IDS successfully identify?   
-F1-score: Combines precision and recall into one measurement using their harmonic mean   
+#### Precision, recall, and F1-score  
+***Precision***:  When the IDS identifies something as an attack, how often is it actually an attack?   
+***Recall***: Out of all the actual attacks, how many did the IDS successfully identify?   
+***F1-score***: Combines precision and recall into one measurement using their harmonic mean   
 
 | Metric | Baseline ANN | Random Forest |
 |-------|------------------|----------|
@@ -98,7 +99,7 @@ F1-score: Combines precision and recall into one measurement using their harmoni
 
 The RF achieved better recall and F1-score than the baseline ANN, while the ANN achieve higher precision. The best model will depend on what an IDS should prioritize. For example, low precision could mean legitimate activity is being falsely identified as malicious while low recall means genuine attacks are being missed.   
 
-Confusion matrices  
+#### Confusion matrices  
 | Outcome | Meaning |
 |----------|-------|
 | True Positive	| Correctly identified an attack |

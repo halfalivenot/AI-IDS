@@ -1,4 +1,9 @@
 # AI-IDS
+* Stage 1: Data collection and dataset creation
+* Stage 2: Feature selection and preprocessing
+* Stage 3: Splitting the dataset
+* Stage 4: AI-IDS Model
+* Stage 5: Evaluation
 
 ## Stage 1: Data collection and dataset creation  
 •	Set up a Windows Server virtual machine on GCP  
@@ -71,10 +76,10 @@ We also experimented with a second neural network to see how different configura
 | Neurons	| 64, 36, 16 |	32, 16 |
 | Optimizer	| Adam | SGD |
 | Epochs	| 10	| 5 |
-| Output | Sigmoid | Sigmoid |
+| Output | Sigmoid | Sigmoid |  
 The experimental version is smaller and uses SGD instead of Adam. It is meant to allow us to investigate whether changing the network architecture and optimization method would affect its learning performance.   
 
-### Stage 5: Evaluation
+## Stage 5: Evaluation
 Model accuracy comparison  
 •	RF: 87%   
 •	Baseline ANN: 86.20 %  
@@ -87,9 +92,16 @@ F1-score: Combines precision and recall into one measurement using their harmoni
 
 | Metric | Baseline ANN | Random Forest |
 |-------|------------------|----------|
+| Precision |	98% |	96% |
+| Recall	| 74% |	78% |
+| F1-score | 84% | 86% |  
 
 The RF achieved better recall and F1-score than the baseline ANN, while the ANN achieve higher precision. The best model will depend on what an IDS should prioritize. For example, low precision could mean legitimate activity is being falsely identified as malicious while low recall means genuine attacks are being missed.   
 
-Confusion matrices
+Confusion matrices  
 | Outcome | Meaning |
 |----------|-------|
+| True Positive	| Correctly identified an attack |
+| True Negative	| Correctly identified normal activity |
+| False Positive | Normal activity was incorrectly flagged as an attack |
+| False Negative	| An actual attack was missed | 

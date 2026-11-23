@@ -10,7 +10,7 @@
 •	Pipelined logs into BigQuery studio  
 •	Collected events over a 3-day period  
 •	Organized the raw Window logs into sessions  
-•	Merged with another dataset to balance out the malicious and benign traffic  
+•	Merged with another <a href="https://www.kaggle.com/code/i0nlyaziz/cybersecurity-intrusion-detection"> dataset </a> to balance out the malicious and benign traffic  
 •	Final dataset contains 10,645 records and six columns:  
 
 | Columns | Purpose |
